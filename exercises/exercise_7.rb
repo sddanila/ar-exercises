@@ -10,3 +10,9 @@ puts "Exercise 7"
 puts "----------"
 
 # Your code goes here ...
+user_store = gets.chomp
+begin 
+  Store.create!(:name => user_store, :annual_revenue => 500)
+rescue ActiveRecord::RecordInvalid
+  puts "You need to make sure you add all input fields to the record"
+end
